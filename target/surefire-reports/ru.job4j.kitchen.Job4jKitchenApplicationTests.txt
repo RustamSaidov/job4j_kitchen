@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: ru.job4j.kitchen.Job4jKitchenApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 20.72 s <<< FAILURE! - in ru.job4j.kitchen.Job4jKitchenApplicationTests
+contextLoads  Time elapsed: 0.115 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@73c09a98 testClass = ru.job4j.kitchen.Job4jKitchenApplicationTests, locations = [], classes = [ru.job4j.kitchen.KitchenApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2794eab6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6574a52c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@f78a47e, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@58cbafc2, org.springframework.boot.test.context.SpringBootTestAnnotation@582a11a0], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+Caused by: java.lang.IllegalArgumentException: Failed to load: ru.job4j_kitchen.model.Order for orders
+Caused by: java.lang.ClassNotFoundException: ru.job4j_kitchen.model.Order
+
