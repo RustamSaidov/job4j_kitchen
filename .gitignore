@@ -1,5 +1,5 @@
 *.iml
-../../Users/rusta/Downloads/job4j-kitchen/target
+target
 .idea
 /testdb.mv.db
 /testdb.trace.db
