@@ -14,4 +14,5 @@ public class Order {
     private int id;
     private int userId;
     private int dishId;
+    private String orderStatus;
 }
