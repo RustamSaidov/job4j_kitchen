@@ -11,7 +11,7 @@
     <groupId>ru.job4j</groupId>
     <artifactId>kitchen</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>order</name>
+    <name>kitchen</name>
     <description>Job4j REST Microservices</description>
     <properties>
         <java.version>17</java.version>
