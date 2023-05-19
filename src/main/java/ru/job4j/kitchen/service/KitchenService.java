@@ -10,8 +10,6 @@ import ru.job4j.kitchen.model.KitchenOrder;
 import ru.job4j.kitchen.model.Order;
 import ru.job4j.kitchen.repository.KitchenRepository;
 
-import java.util.Optional;
-
 
 @ThreadSafe
 @Service
@@ -26,19 +24,18 @@ public class KitchenService {
     public void receiveOrder(Order order) {
         log.debug(order.toString());
         boolean isPossibleToCook = isPossibleToCook(order);
-        System.out.println("ISPOSSIBLETOCOOK: " +isPossibleToCook);
         order.setOrderStatus("impossible to complete");
-        if(isPossibleToCook){
+        if (isPossibleToCook) {
             order.setOrderStatus("cooking");
             kafkaTemplate.send("cooked_order", order);
-            var savedOrder = kitchenRepository.save(new KitchenOrder(0,order.getId(),order.getDishId()));
+            var savedOrder = kitchenRepository.save(new KitchenOrder(0, order.getId(), order.getDishId()));
             order.setOrderStatus("ready for delivery");
         }
         kafkaTemplate.send("cooked_order", order);
     }
 
     /*Random imitation of a possibility to cook some dish in the kitchen*/
-    private boolean isPossibleToCook(Order order){
+    private boolean isPossibleToCook(Order order) {
         return Math.random() < 0.5;
     }
 }
